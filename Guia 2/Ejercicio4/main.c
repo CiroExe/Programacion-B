@@ -47,8 +47,8 @@ void muestraPositivos(float *v, int n)
     int i;
 
     for(i=0;i<n;i++)
-        if(*v+i > 0){
-            printf("%.2f\t", *v+i);
+        if(*(v+i) > 0){
+            printf("%.2f\t", *(v+i));
         }
 
 
