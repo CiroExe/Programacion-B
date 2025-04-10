@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1744325280 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 4\ejercicio1\calculadora.c.c
+	<stdio.h>
+	<stdlib.h>
+	"calculadora.h"
+
+1744324315 c:\users\mdqci\onedrive\escritorio\programación 2\guia 4\ejercicio1\calculadora.h
+
+1744327303 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 4\ejercicio1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"calculadora.h"
+
