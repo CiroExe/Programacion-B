@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1744385787 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Pila Estatica.h"
+
+1744385436 c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio1a\pila estatica.h
+
+1744385844 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio1a\pila estatica.c.c
+	"Pila Estatica.h"
+	<stdio.h>
+

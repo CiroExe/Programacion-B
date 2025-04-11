@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1744389506 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio1b\main.c
+	<stdio.h>
+	<stdlib.h>
+	"PilaDinamica.h"
+
+1744389284 c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio1b\piladinamica.h
+
+1744389373 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio1b\piladinamica.c
+	<stdlib.h>
+	"PilaDinamica.h"
+
