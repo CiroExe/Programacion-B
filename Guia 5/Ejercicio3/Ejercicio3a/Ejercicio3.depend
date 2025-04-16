@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1744691349 source:c:\users\mdqci\onedrive\desktop\progra 2\guia 5\ejercicio3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Punto3.h"
+
+1744691363 c:\users\mdqci\onedrive\desktop\progra 2\guia 5\ejercicio3\punto3.h
+
+1744691368 source:c:\users\mdqci\onedrive\desktop\progra 2\guia 5\ejercicio3\pilaestatica.c
+	<stdio.h>
+	<stdlib.h>
+	"Punto3.h"
+
