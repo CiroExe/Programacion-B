@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1744775970 source:c:\users\mdqci\onedrive\desktop\progra 2\guia 5\ejercicio6\ejercicio6b\pila.c
+	"pila.h"
+	<stdlib.h>
+
+1744775975 c:\users\mdqci\onedrive\desktop\progra 2\guia 5\ejercicio6\ejercicio6b\pila.h
+
+1744776086 source:c:\users\mdqci\onedrive\desktop\progra 2\guia 5\ejercicio6\ejercicio6b\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+
