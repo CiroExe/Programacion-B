@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1744600059 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"PilaEstatica.h"
+
+1744600088 c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio2\pilaestatica.h
+
+1744600059 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio2\pilaestatica.c
+	<stdio.h>
+	<stdlib.h>
+	"PilaEstatica.h"
+
+1744600059 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio2a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"PilaEstatica.h"
+
+1744600088 c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio2a\pilaestatica.h
+
+1744600059 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio2a\pilaestatica.c
+	<stdio.h>
+	<stdlib.h>
+	"PilaEstatica.h"
+

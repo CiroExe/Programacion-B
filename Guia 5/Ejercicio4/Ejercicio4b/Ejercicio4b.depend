@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1744761411 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio4b\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cola.h"
+
+1744760649 c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio4b\cola.h
+
+1744763222 source:c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio4\ejercicio4b\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cola.h"
+
+1744760649 c:\users\mdqci\onedrive\escritorio\programación 2\guia 5\ejercicio4\ejercicio4b\cola.h
+
