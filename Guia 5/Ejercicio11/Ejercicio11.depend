@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1744916436 source:c:\users\mdqci\onedrive\desktop\progra 2\guia 5\ejercicio11\cola.c
+	<stdio.h>
+	<stdlib.h>
+	"cola.h"
+
+1744916401 c:\users\mdqci\onedrive\desktop\progra 2\guia 5\ejercicio11\cola.h
+
+1744918698 source:c:\users\mdqci\onedrive\desktop\progra 2\guia 5\ejercicio11\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cola.h"
+
