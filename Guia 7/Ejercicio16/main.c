@@ -10,7 +10,9 @@ typedef nodoA *arbol;
 
 //Implementar una función iterativa que inserte un elemento en un ABB.
 
-
+void addnodoABB(arbol *, TElementoA);
+void buscaInsercion(arbol *, TElementoA);
+void muestraArbolInorden(arbol);
 int main()
 {
     arbol a = NULL;
@@ -22,6 +24,7 @@ int main()
         buscaInsercion(&a, num);
         scanf("%d", &num);
     }
+    muestraArbolInorden(a);
     return 0;
 }
 
@@ -36,18 +39,45 @@ void addnodoABB(arbol *a, TElementoA elem){
     }
 }
 
-void buscaInsercion(arbol *a, TElementoA elem){
-    arbol aux;
+/*void buscaInsercion(arbol *a, TElementoA elem){
+    arbol aux, ant;
     if (*a == NULL)
         addnodoABB(a, elem);
     else{
         aux = *a;
-        while (aux != NULL ){
+        ant = NULL;
+        while (aux != NULL){
+            ant=aux;
             if (aux->dato < elem)
                 aux = aux->der;
             else
                 aux = aux->izq;
         }
-        addnodoABB(&aux, elem);
+
+        if(ant->dato > elem)
+            addnodoABB(&(ant->izq), elem);
+        else
+            addnodoABB(&(ant->der), elem);
+
     }
+}*/
+
+void buscaInsercion(arbol *a, TElementoA elem) {
+    while (*a != NULL) {
+        if ((*a)->dato < elem)
+            a = &((*a)->der);
+        else
+            a = &((*a)->izq);
+    }
+    addnodoABB(a, elem);
+}
+
+
+void muestraArbolInorden(arbol a){
+    if(a!=NULL){
+        muestraArbolInorden(a->izq);
+        printf("%d\t", a->dato);
+        muestraArbolInorden(a->der);
+    }
+
 }
