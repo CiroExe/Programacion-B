@@ -68,7 +68,7 @@ int busca(arbol a, TElementoA dato){
         if (a->dato == dato)
             return 1;
         else
-            return busca(a->izq, dato) + busca(a->der, dato);
+            return busca(a->izq, dato) || busca(a->der, dato); //Si el return era una suma recursiva por ramas me iba a devolver 1 u otro numero. En cambio con un OR solo puede devolver 0 o 1.
     }
     return 0;
 }
