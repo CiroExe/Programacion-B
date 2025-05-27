@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define MAX 256
 
 /*  Dado un árbol binario que proviene de la transformación de un bosque,
     a) hallar la cantidad de árboles del bosque que tenían altura al menos K (dato de entrada)
@@ -17,14 +18,22 @@ typedef nodoA *arbol;
 void addnodo(arbol *, TElementoA);
 int alturaArbol(arbol);
 int cantAlturaK(arbol, unsigned int);
+void generaVec(arbol, int [], int *);
+void muestraVec(int [], int);
+int calculaGrado(arbol);
+int tieneAlMenosUnoGradoK(arbol, int);
+int todosPoseenGradoK(arbol, int);
 int main()
 {
     arbol bosque=NULL;
     unsigned int K=2;
+    int dimension=0, vec[MAX];
 
     addnodo(&bosque, 7);
     addnodo(&bosque->der, 10);
     addnodo(&bosque->der->der, 52);
+    addnodo(&bosque->der->der->izq, 65);
+    addnodo(&bosque->der->der->izq->der, 1);
     addnodo(&bosque->der->izq, 23);
     addnodo(&bosque->der->izq->der, 54);
     addnodo(&bosque->der->izq->der->izq, 18);
@@ -44,8 +53,12 @@ int main()
         printf("Cantidad de arboles que pertenecen al bosque con altura de a lo sumo %u -> %d\n",K, cantAlturaK(bosque,K));
 
 
+    //Inciso B
+    generaVec(bosque, vec, &dimension);
+    muestraVec(vec,dimension);
 
-
+    //Inciso C
+    todosPoseenGradoK(bosque, 3) ? printf("Todos los arboles que componen al bosque poseen al menos un nodo de grado K") : printf("No cumple");
     return 0;
 }
 
@@ -78,5 +91,98 @@ int cantAlturaK(arbol bosque, unsigned int K){
         return cont;
     }
     return 0;
+}
 
+int maxArbol(arbol a){
+    int MaxIzq, MaxDer;
+    if(a!=NULL){
+        MaxIzq=maxArbol(a->izq);
+        MaxDer=maxArbol(a->der);
+        if(MaxIzq>MaxDer && MaxIzq>=a->dato)
+            return MaxIzq;
+        else
+            if(MaxDer>MaxIzq && MaxDer >= a->dato)
+                return MaxDer;
+            else
+                return a->dato;
+    }
+    else
+        return -99999;
+}
+
+void generaVec(arbol bosque, int vec[], int *dimension){
+    arbol aux;
+    if(bosque!=NULL){
+        while(bosque !=NULL){
+            aux=bosque->der;
+            bosque->der=NULL;
+            vec[(*dimension)++]=maxArbol(bosque);
+            bosque->der=aux;
+            bosque = bosque->der;
+        }
+    }
+}
+
+void muestraVec(int vec[], int dimension){
+    int i;
+    for(i=0;i<dimension;i++)
+        printf("%d\n",vec[i]);
+}
+
+
+
+/*int calculaGradoArbol(arbol a){
+    arbol hijo;
+    int maxGrado;
+    int cont=0;
+
+    if (a!=NULL){
+        hijo=a->izq;
+        while(hijo!=NULL){
+            cont++;
+            maxGrado=calculaGrado(hijo);
+            hijo=hijo->der;
+        }
+        if (cont>maxGrado)
+            maxGrado=cont;
+
+        return cont == 0 ? 1:maxGrado;
+    }
+    else
+        return 0;
+}*/
+
+int calculaGrado(arbol a){
+    arbol hijo;
+    int cont=0;
+    if (a!=NULL){
+        hijo=a->izq;
+        while(hijo!=NULL){
+            cont++;
+            hijo=hijo->der;
+        }
+        return cont;
+    }
+}
+
+
+int tieneAlMenosUnoGradoK(arbol a, int K){
+
+    if (a!=NULL){
+        if (calculaGrado(a) == K)
+            return 1;
+        else
+            return tieneAlMenosUnoGradoK(a->izq,K) || tieneAlMenosUnoGradoK(a->der, K); // Sigue recorriendo por izquierda O derecha.
+    }
+    else
+        return 0; //No encuentra ningun nodo de grado K en el arbol.
+}
+
+int todosPoseenGradoK(arbol bosque, int K){
+
+    if (bosque!=NULL){
+        while(bosque!=NULL && tieneAlMenosUnoGradoK(bosque,K))
+            bosque=bosque->der;
+        return bosque == NULL;
+    }
 }
