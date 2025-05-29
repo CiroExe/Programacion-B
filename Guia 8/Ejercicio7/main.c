@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 
-/**Desarrollar una funciÛn que obtenga el grado de un vÈrtice (dato) de un grafo almacenado en:
+/**Desarrollar una funci√≥n que obtenga el grado de un v√©rtice (dato) de un grafo almacenado en:
 a) una matriz de adyacencia
 b) una lista de adyacencia
-c) media matriz (tri·ngulo superior)
+c) media matriz (tri√°ngulo superior)
 **/
 
 
@@ -14,13 +14,10 @@ int gradoMatriz(int MA[MAX][MAX], unsigned int n, int v){
 
     for(j=0;j<n;j++){
         if (MA[v][j]!=0)
-            if(v==j)
-                grado+=2;
-            else
-                grado+=MA[v][j]; // 1 Si es arista o mas si es ponderado.
+             grado+=MA[v][j]; // 1 Si es arista o mas si es ponderado.
     }
 
-    return grado;
+    return grado-(MA[v][v] == 1);
 }
 
 int gradoLista(Grafo vec[], unsigned int n, int v){
@@ -29,9 +26,7 @@ int gradoLista(Grafo vec[], unsigned int n, int v){
 
     aux=vec[i].nodosAdy;
     while(aux!=NULL){
-        if(v==aux->dato)
-            grado+=2;
-        else
+        if (aux->elem != v)
             grado++;
         aux=aux->sig;
     }
@@ -43,12 +38,9 @@ int gradoMatrizSup(int MA[MAX][MAX], unsigned int n, int v){
     unsigned int grado=0;
     //Para no tener que usar una funcion de busqueda voy a hacer coincidir el elemento con el indice de la matriz.
 
-    for (j=v; j<n;j++) //Considerar la diagonal si hay un bucle
+    for (j=v; j<n;j++) 
         if (MA[v][j]!=0)
-            if (v==j)
-                grado+=2;
-            else
-                grado++;
+            grado++;
 
     return grado;
 }
