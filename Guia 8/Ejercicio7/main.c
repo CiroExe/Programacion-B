@@ -17,7 +17,7 @@ int gradoMatriz(int MA[MAX][MAX], unsigned int n, int v){
              grado+=MA[v][j]; // 1 Si es arista o mas si es ponderado.
     }
 
-    return grado-(MA[v][v] == 1);
+    return grado;
 }
 
 int gradoLista(Grafo vec[], unsigned int n, int v){
