@@ -12,7 +12,7 @@ c) media matriz (triángulo superior)
 int gradoMatriz(int MA[MAX][MAX], unsigned int n, int v){
     unsigned int grado=0;
 
-    for(j=0;j<n;j++){
+    for(int j=0;j<n;j++){
         if (MA[v][j]!=0)
              grado+=MA[v][j]; // 1 Si es arista o mas si es ponderado.
     }
